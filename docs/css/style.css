@@ -1,0 +1,57 @@
+
+.calendar-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.calendar {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* 상단 월/연도 */
+.calendar-header {
+  margin-bottom: 20px;
+}
+
+.month {
+  font-family: 'Gaegu', cursive;
+  font-size: 3.2rem;
+  color: #3aa7e8;
+}
+
+.year {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* 요일 */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 0.75rem;
+  color: #3aa7e8;
+  margin-bottom: 10px;
+}
+
+/* 날짜 */
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day {
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-radius: 50%;
+  color: #333;
+}
+
+/* 6월 6일 강조 */
+.highlight {
+  background: #9edcff;
+  color: #fff;
+  font-weight: 600;
+}

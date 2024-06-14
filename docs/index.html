@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>홍건욱🤍김예원</title>
+    <meta content="홍건욱과 김예원의 결혼식에 와서 축하해주세요~!" name="description"/>
+    <meta property="og:image" content="images/pic2.JPG">
+    <meta property="fb:app_id" content="781066922265598" />
+    <meta property="fb:admins" content="Choi.Anderson"/>
+    <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower|Gugi|Noto+Serif+KR|Stylish|Sunflower:300"
+          rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function sendMail() {
+
+            (function () {
+                emailjs.init("user_yjLL5xG0A3kkOCH5BGIDh");
+                emailjs.send("wedding-mail", "gift_send", {
+                    name: $("#sender-name").value,
+                    gift: $("#gift-name").text(),
+                    message: $("#sender-message").value
+                }).then(function (response) {
+                    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                }, function (err) {
+                    console.log("FAILED. error=", err);
+                });
+            })();
+        }
+
+        function findGetParameter(parameterName) {
+            var result = null,
+                tmp = [];
+            location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                  tmp = item.split("=");
+                  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                });
+            return result;
+        }
+
+        $(document).ready(function () {
+
+            function getText(){
+                var result = null;
+                $.ajax( { url: "https://raw.githubusercontent.com/AndersonChoi/wedding-card/master/README.md",
+                        type: 'get',
+                        dataType: 'html',
+                        async: false,
+                        success: function(data) { result = data; }
+                    }
+                );
+                FileReady = true;
+                return result;
+            }
+            var markdown_source = getText();
+            var comment_contents = markdown_source.split("축하의 말")[1];
+
+            var md = new Remarkable();
+            $("#comments").append(md.render(comment_contents));
+
+            
+            if(findGetParameter('gift')=='false'){
+                $('#gifts').hide();
+            }
+        });
+
+
+
+
+    </script>
+</head>
+<body id="top">
+<header></header>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2"></script>
+<div class="page-content">
+    <div class="div">
+        <div class="ww-home-page" id="home">
+            <div class="ww-wedding-announcement d-flex align-items-center justify-content-start">
+                <div class="container ww-announcement-container">
+                    <p class="ww-couple-name ww-title" style="font-size:4.0em">홍건욱 & 김예원</p>
+                    <p class="h2 mt-5 ww-title" style="font-family: 'Gugi', cursive; font-size:1.0em">
+                        | WE ARE GETTING MARRIED |
+                    </p>
+                    <p class="h2 mt-5 ww-title"
+                       style="font-family: 'Noto Serif KR', serif; font-size:1.0em; letter-spacing:-1px">
+                        <b style="font-size:1.4em;">2026. 06. 06. SAT AM 11:00</b>
+                        <br>춘천 스카이컨벤션 4층
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="ww-nav-bar sticky-top bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <button aria-controls="ww-navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                            class="navbar-toggler"
+                            data-target="#ww-navbarNav" data-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse text-uppercase" id="ww-navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+<section class="calendar-section">
+  <div class="calendar-wrap">
+
+    <!-- 왼쪽 캘린더 -->
+    <div class="calendar-box">
+      <div class="calendar-header">
+      <span class="month">06</span>
+      <span class="year">2026</span>
+    </div>
+
+      <div class="calendar-grid">
+        <div class="day sun">SUN</div>
+        <div class="day">MON</div>
+        <div class="day">TUE</div>
+        <div class="day">WED</div>
+        <div class="day">THU</div>
+        <div class="day">FRI</div>
+        <div class="day sat">SAT</div>
+
+        <!-- 6월 2026 (1일 = 월요일) -->
+        <div></div>
+        <div class="date">1</div>
+        <div class="date">2</div>
+        <div class="date">3</div>
+        <div class="date">4</div>
+        <div class="date">5</div>
+        <div class="date wedding">6</div>
+
+        <div class="date">7</div>
+        <div class="date">8</div>
+        <div class="date">9</div>
+        <div class="date">10</div>
+        <div class="date">11</div>
+        <div class="date">12</div>
+        <div class="date">13</div>
+
+        <div class="date">14</div>
+        <div class="date">15</div>
+        <div class="date">16</div>
+        <div class="date">17</div>
+        <div class="date">18</div>
+        <div class="date">19</div>
+        <div class="date">20</div>
+
+        <div class="date">21</div>
+        <div class="date">22</div>
+        <div class="date">23</div>
+        <div class="date">24</div>
+        <div class="date">25</div>
+        <div class="date">26</div>
+        <div class="date">27</div>
+
+        <div class="date">28</div>
+        <div class="date">29</div>
+        <div class="date">30</div>
+      </div>
+      <div class="date-place">
+        2026년 6월 6일 (토) 오전 11시<br>
+        춘천 스카이컨벤션웨딩 4층 스카이홀
+      </div>
+    </div>
+
+    <!-- 오른쪽 문구 -->
+    <div class="invitation-text">
+      <h3 class="title">건욱<span class="heart">♥</span>예원 결혼합니다!</h3>
+
+      <p class="bible">
+        "이러한즉 이제 둘이 아니요 한 몸이니<br>
+        그러므로 하나님이 짝지어 주신 것을<br>
+        사람이 나누지 못할찌니라"
+      </p>
+
+      <p>
+        첫 만남에 생일에 꽃을 선물받고 싶다며<br>
+        수줍게 말하던 <span class="name">예원</span> 
+      </p>
+
+      <p>
+        그런 예원에게 고백하려 같이 영화보는 중에도<br>
+        멘트를 계속 외우고 있던 <span class="name">건욱</span>
+      </p>
+
+      <p>
+        가을의 첫 자락, 서로 긴장하며 수줍게 만났던 서로가<br>
+        하나가 되는 뜻깊은 날을 가지게 되었습니다.
+      </p>
+
+      <p>
+        각자의 방향으로 살던 서로가 서로의 손을 꼭 잡고<br>
+        같은 방향으로 함께 걸어가고자 합니다.
+      </p>
+
+      <p>
+        그 시작의 순간에 함께 해주셔서 응원해주시고<br>
+        축복해주시면 감사하겠습니다.
+      </p>
+
+      <div class="names">
+        <div>홍경일 · 박미경의 장남 <strong>홍건욱</strong></div>
+        <div>김경원 · 박은주의 장녀 <strong>김예원</strong></div>
+      </div>
+
+      
+    </div>
+
+  </div>
+</section>
+
+<section class="profile-section">
+  <div class="profile-wrap">
+
+    <!-- 신랑 -->
+    <div class="profile-card">
+      <h3 class="role">신랑</h3>
+      <h2 class="name">홍건욱</h2>
+      <img src="images/groom.jpg" alt="신랑 홍건욱" class="profile-img">
+      <p class="profile-text">
+        늘 한결같은 마음으로<br>
+        평생을 함께 걷고 싶은 사람
+      </p>
+    </div>
+
+    <!-- 신부 -->
+    <div class="profile-card">
+      <h3 class="role">신부</h3>
+      <h2 class="name">김예원</h2>
+      <img src="images/bride.jpg" alt="신부 김예원" class="profile-img">
+      <p class="profile-text">
+        작은 순간에도 감사하며<br>
+        사랑을 키워가는 사람
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="gallery-section">
+  <h2 class="section-title">Gallery</h2>
+
+  <div class="gallery-grid">
+    <img src="images/pic1.jpg" class="gallery-item" alt="">
+    <img src="images/pic2.jpg" class="gallery-item" alt="">
+    <img src="images/pic3.jpg" class="gallery-item" alt="">
+    <img src="images/pic4.jpg" class="gallery-item" alt="">
+    <img src="images/pic5.jpg" class="gallery-item" alt="">
+    <img src="images/pic6.jpg" class="gallery-item" alt="">
+    <img src="images/pic7.jpg" class="gallery-item" alt="">
+    <img src="images/pic8.jpg" class="gallery-item" alt="">
+    <img src="images/pic9.jpg" class="gallery-item" alt="">
+    
+  </div>
+</section>
+
+<!-- 모달 -->
+<div class="gallery-modal" id="galleryModal">
+  <span class="close-btn">&times;</span>
+  <img class="modal-img" id="modalImg">
+</div>
+
+
+<section class="map-section">
+  <h2 class="section-title">Information</h2>
+
+  <div class="map-content">
+
+    <!-- 왼쪽: 지도 + 아이콘 -->
+    <div class="map-left">
+      <div class="map-image-wrap">
+        <img src="images/map.png" alt="춘천 스카이컨벤션웨딩 약도">
+      </div>
+
+      <div class="map-links">
+        <a href="https://naver.me/5BcF56FV" target="_blank">
+          <img alt="naver-map" class="map-icon" src="images/map/naver-map.png"/>
+        </a>
+        <a href="https://place.map.kakao.com/674356067" target="_blank">
+          <img alt="kakao-map" class="map-icon" src="images/map/kakao-map.png"/>
+        </a>
+      </div>
+    </div>
+
+    <!-- 오른쪽: 문구 -->
+    <div class="map-info">
+      <h3>주소</h3>
+      <p>강원특별자치도 춘천시 춘천순환로 770</p>
+
+      <h3>셔틀버스</h3>
+      <p>
+        · 춘천시외버스터미널 앞 벤츠코리아 승차 / 매시 정각 출발<br>
+        · 춘천역 1번출구 광장 앞 승차 / 매시 20분 출발
+      </p>
+
+      <h3>대중교통 (버스)</h3>
+      <p>
+        · 남춘천역 1번출구 (정류장번호 2295)<br>
+        &nbsp;&nbsp;400번 / 100-1번 승차 후 소양교차로 하차<br><br>
+        · 시외버스터미널 (정류장번호 2058)<br>
+        &nbsp;&nbsp;400번 승차 후 소양교차로 하차
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="account-section">
+  <h2 class="section-title">마음 전하실 곳</h2>
+     <!-- 안내 문구 -->
+  <p class="account-desc">
+    보내주신 따뜻한 마음 소중히 받아<br>
+    행복하게 잘 살겠습니다.<br>
+    혹시라도 마음을 전하실 분들은<br>
+    아래 계좌로 부탁드립니다.
+  </p>
+  <div class="account-wrap">
+
+    <!-- 신랑측 -->
+    <div class="account-box">
+      <button class="account-toggle">신랑측 계좌</button>
+      <div class="account-content">
+
+        <!-- 신랑 -->
+        <div class="account-item">
+          <p class="account-name">신랑 홍건욱</p>
+          <p class="account-number" id="groom-account">
+            카카오 3333-31-8389379
+          </p>
+          <button class="copy-btn" data-copy="groom-account">복사하기</button>
+        </div>
+
+        <!-- 신랑 아버지 -->
+        <div class="account-item">
+          <p class="account-name">아버지 홍경일</p>
+          <p class="account-number" id="groom-father">
+            농협 109-02-371706 
+          </p>
+          <button class="copy-btn" data-copy="groom-father">복사하기</button>
+        </div>
+
+        <!-- 신랑 어머니 -->
+        <div class="account-item">
+          <p class="account-name">어머니 박미경</p>
+          <p class="account-number" id="groom-mother">
+            국민은행 444444-55-666666 <button class="copy-btn" data-copy="groom-mother">복사하기</button>
+          </p>
+          
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 신부측 -->
+    <div class="account-box">
+      <button class="account-toggle">신부측 계좌</button>
+      <div class="account-content">
+
+        <!-- 신부 -->
+        <div class="account-item">
+          <p class="account-name">신부 김예원</p>
+          <p class="account-number" id="bride-account">
+            토스 1002-3505-2278 
+          </p>
+          <button class="copy-btn" data-copy="bride-account">복사하기</button>
+        </div>
+
+        <!-- 신부 아버지 -->
+        <div class="account-item">
+          <p class="account-name">아버지 김경원</p>
+          <p class="account-number" id="bride-father">
+            하나은행 359-910303-38107 
+          </p>
+          <button class="copy-btn" data-copy="bride-father">복사하기</button>
+        </div>
+
+        <!-- 신부 어머니 -->
+        <div class="account-item">
+          <p class="account-name">어머니 박은주</p>
+          <p class="account-number" id="bride-mother">
+            하나은행 299-910290-93607 
+          </p>
+          <button class="copy-btn" data-copy="bride-mother">복사하기</button>
+          
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+    </div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="giftMailModal" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">선물하기 - <span id="gift-name"></span></h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">보내는 분 성함</span>
+                    </div>
+                    <input aria-describedby="basic-addon3" class="form-control" id="sender-name" type="text">
+                </div>
+                <div class="input-group">
+                    <textarea aria-label="With textarea" class="form-control" id="sender-message"
+                              placeholder="신랑, 신부에게 선물 예약과 함께 보낼 메시지를 입력해주세요. 이 메시지는 신랑, 신부에게 발송됩니다." rows=4></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="reserveGiftButton" type="button">예약</button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer></footer>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/ekko-lightbox.min.js"></script>
+<script src="scripts/main.js"></script>
+
+<div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
+</div>
+
+<div class="bottom_left">
+    <audio id="player" src="mus.mp3"></audio>
+    <div>
+        <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
+    </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,450 @@
+.calendar-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-wrap {
+  display: flex;
+  align-items: stretch; /* 🔥 핵심 */
+  gap: 24px;
+  max-width: 900px;          /* 너무 퍼지지 않게 */
+  width: 100%;
+  gap: 32px;
+}
+
+.calendar-box {
+  flex: 1;              /* 문구와 균형 */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: none;   
+}
+
+.calendar-header {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.day {
+  font-weight: 600;
+  color: #666;
+}
+
+.sun { color: #e74c3c; }
+.sat { color: #3498db; }
+
+.date {
+  padding: 10px 0;
+}
+
+.wedding {
+  background: #3bb3ff;
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+}
+
+.invitation-text {
+  flex: 1.2;           /* 문구가 더 길어서 조금 더 */
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.title {
+  color: #3bb3ff;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.name {
+  color: #3bb3ff;
+}
+.bible {
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.names {
+  margin: 30px 0 20px;
+  font-weight: 500;
+}
+
+.date-place {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+
+
+.calendar-couple {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .calendar-couple {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+  }
+}
+
+/* 캘린더 크게 */
+.calendar {
+  max-width: 380px;
+}
+
+.month {
+  font-size: 64px;
+  color: #3aa7e8;
+  font-weight: bold;
+}
+
+.year {
+  display: block;
+  font-size: 16px;
+  color: #888;
+}
+
+.weekdays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekdays {
+  font-size: 13px;
+  margin-bottom: 12px;
+  color: #3aa7e8;
+}
+
+.days {
+  gap: 10px;
+}
+
+.day {
+  font-size: 16px;
+  padding: 8px 0;
+  border-radius: 50%;
+}
+
+.highlight {
+  background: #9edcff;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 문구 */
+.couple-text {
+  max-width: 420px;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.couple-text h2 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.couple-text h3 {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.heart {
+  color: #3aa7e8;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  margin: 24px 0;
+}
+
+.couple-text p {
+  margin-bottom: 16px;
+}
+
+.family {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.wedding-info {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-wrap {
+  max-width: 900px;      /* 🔥 캘린더 섹션과 동일 */
+  width: 100%;
+  display: flex;
+  gap: 32px;
+}
+
+.profile-card {
+  flex: 1;
+  text-align: center;
+}
+
+.role {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.profile-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .profile-wrap {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .profile-img {
+    max-width: 220px;
+  }
+}
+.map-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Comic Sans MS', 'Nanum Pen Script', cursive;
+  font-size: 42px;
+  color: #2aa7e0;
+  margin-bottom: 40px;
+}
+
+.map-section {
+  padding: 80px 20px;
+}
+
+.map-content {
+  max-width: 900px;           /* 🔥 캘린더/프로필 섹션과 동일 */
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* 왼쪽 */
+.map-left {
+  flex: 1;
+  text-align: center;
+}
+
+.map-image-wrap img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.map-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.map-icon {
+  width: 48px;
+  height: 48px;
+}
+
+/* 오른쪽 */
+.map-info {
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.map-info h3 {
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+
+.gallery-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.gallery-grid {
+  max-width: 900px;              /* 다른 섹션과 통일 */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 모달 */
+.gallery-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-modal img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+.gallery-modal.show {
+  display: flex;
+}
+
+.close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.account-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.account-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.account-box {
+  margin-bottom: 20px;
+}
+
+.account-toggle {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.account-content {
+  display: none;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fafafa;
+  margin-top: 10px;
+}
+
+.account-content.show {
+  display: block;
+}
+
+.account-name {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.account-number {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.copy-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  background: #3bb3ff;
+  color: #fff;
+  cursor: pointer;
+}
+.account-item {
+  padding: 14px 0;
+  border-top: 1px dashed #e0e0e0;
+}
+
+.account-item:first-child {
+  border-top: none;
+}
+
+.account-name {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.account-number {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.account-desc {
+  margin: 20px auto 40px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #666;
+  text-align: center;
+}
