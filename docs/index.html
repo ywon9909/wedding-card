@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홍건욱🤍김예원</title>
     <meta content="홍건욱과 김예원의 결혼식에 와서 축하해주세요~!" name="description"/>
-    <meta property="og:image" content="images/pic2.JPG">
+    <meta property="og:image" content="images/pic2.jpg">
     <meta property="fb:app_id" content="781066922265598" />
     <meta property="fb:admins" content="Choi.Anderson"/>
     <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
@@ -272,65 +272,19 @@
   </div>
 </section>
 
-<script>
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const modal = document.getElementById('galleryModal');
-  const modalImg = document.getElementById('modalImg');
-
-  let currentIndex = 0;
-
-  galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      currentIndex = index;
-      modalImg.src = item.src;
-      modal.classList.add('show');
-    });
-  });
-
-  document.querySelector('.close-btn').addEventListener('click', () => {
-    modal.classList.remove('show');
-  });
-</script>
-<script>
-  let startX = 0;
-  let endX = 0;
-
-  modal.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-  });
-
-  modal.addEventListener('touchend', (e) => {
-    endX = e.changedTouches[0].clientX;
-    handleSwipe();
-  });
-
-  function handleSwipe() {
-    if (startX - endX > 50) {
-      // 👉 왼쪽 스와이프 (다음 사진)
-      showNext();
-    } else if (endX - startX > 50) {
-      // 👉 오른쪽 스와이프 (이전 사진)
-      showPrev();
-    }
-  }
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % galleryItems.length;
-    modalImg.src = galleryItems[currentIndex].src;
-  }
-
-  function showPrev() {
-    currentIndex =
-      (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-    modalImg.src = galleryItems[currentIndex].src;
-  }
-</script>
-
 <section class="gallery-section">
   <h2 class="section-title">Gallery</h2>
-
-  <div class="gallery-grid">
-    <img src="images/pic1.jpg" class="gallery-item" alt="">
+<div class="gallery-preview">
+  <img
+    src="images/pic1.jpg"
+    class="gallery-preview-img"
+    id="openGallery"
+    alt="웨딩 사진"
+  >
+  <button class="gallery-open-btn">전체보기</button>
+</div>
+<div class="gallery-items" style="display:none;">
+ <img src="images/pic1.jpg" class="gallery-item" alt="">
     <img src="images/pic2.jpg" class="gallery-item" alt="">
     <img src="images/pic3.jpg" class="gallery-item" alt="">
     <img src="images/pic4.jpg" class="gallery-item" alt="">
@@ -339,14 +293,19 @@
     <img src="images/pic7.jpg" class="gallery-item" alt="">
     <img src="images/pic8.jpg" class="gallery-item" alt="">
     <img src="images/pic9.jpg" class="gallery-item" alt="">
-    
-  </div>
+</div>
+
+
 </section>
 
 <!-- 모달 -->
 <div class="gallery-modal" id="galleryModal">
   <span class="close-btn">&times;</span>
   <img class="modal-img" id="modalImg">
+  <!-- 좌우 버튼 -->
+  <button class="nav-btn prev-btn">&#10094;</button>
+  <img class="modal-img" id="modalImg">
+  <button class="nav-btn next-btn">&#10095;</button>
 </div>
 
 
@@ -431,8 +390,7 @@
             농협 109-02-371706 
           </p>
           <button class="copy-btn" data-copy="groom-father">복사하기</button>
-        </div>s
-
+        </div>
       </div>
     </div>
 
@@ -470,34 +428,6 @@
 
     </div>
 </div>
-</div>
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="giftMailModal" role="dialog"
-     tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">선물하기 - <span id="gift-name"></span></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">보내는 분 성함</span>
-                    </div>
-                    <input aria-describedby="basic-addon3" class="form-control" id="sender-name" type="text">
-                </div>
-                <div class="input-group">
-                    <textarea aria-label="With textarea" class="form-control" id="sender-message"
-                              placeholder="신랑, 신부에게 선물 예약과 함께 보낼 메시지를 입력해주세요. 이 메시지는 신랑, 신부에게 발송됩니다." rows=4></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="reserveGiftButton" type="button">예약</button>
-            </div>
-        </div>
-    </div>
 </div>
 <footer></footer>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
