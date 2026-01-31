@@ -203,7 +203,7 @@
       </p>
 
       <p>
-        첫 만남에 생일에 꽃을 선물받고 싶다며<br>
+        생일에 꽃을 선물받고 싶다며<br>
         수줍게 말하던 <span class="name">예원</span> 
       </p>
 
@@ -272,6 +272,60 @@
   </div>
 </section>
 
+<script>
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const modal = document.getElementById('galleryModal');
+  const modalImg = document.getElementById('modalImg');
+
+  let currentIndex = 0;
+
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      currentIndex = index;
+      modalImg.src = item.src;
+      modal.classList.add('show');
+    });
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    modal.classList.remove('show');
+  });
+</script>
+<script>
+  let startX = 0;
+  let endX = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  modal.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    if (startX - endX > 50) {
+      // 👉 왼쪽 스와이프 (다음 사진)
+      showNext();
+    } else if (endX - startX > 50) {
+      // 👉 오른쪽 스와이프 (이전 사진)
+      showPrev();
+    }
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    modalImg.src = galleryItems[currentIndex].src;
+  }
+
+  function showPrev() {
+    currentIndex =
+      (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    modalImg.src = galleryItems[currentIndex].src;
+  }
+</script>
+
 <section class="gallery-section">
   <h2 class="section-title">Gallery</h2>
 
@@ -322,8 +376,6 @@
 </section>
 <section class="map-section">
   <div class="map-content">
-
-
     <!-- 오른쪽: 문구 -->
     <div class="map-info">
       <h3>주소</h3>
@@ -379,16 +431,7 @@
             농협 109-02-371706 
           </p>
           <button class="copy-btn" data-copy="groom-father">복사하기</button>
-        </div>
-
-        <!-- 신랑 어머니 -->
-        <div class="account-item">
-          <p class="account-name">어머니 박미경</p>
-          <p class="account-number" id="groom-mother">
-            국민은행 444444-55-666666 <button class="copy-btn" data-copy="groom-mother">복사하기</button>
-          </p>
-          
-        </div>
+        </div>s
 
       </div>
     </div>
@@ -405,15 +448,6 @@
             토스 1002-3505-2278 
           </p>
           <button class="copy-btn" data-copy="bride-account">복사하기</button>
-        </div>
-
-        <!-- 신부 아버지 -->
-        <div class="account-item">
-          <p class="account-name">아버지 김경원</p>
-          <p class="account-number" id="bride-father">
-            하나은행 359-910303-38107 
-          </p>
-          <button class="copy-btn" data-copy="bride-father">복사하기</button>
         </div>
 
         <!-- 신부 어머니 -->
