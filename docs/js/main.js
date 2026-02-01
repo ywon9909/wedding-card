@@ -118,3 +118,34 @@ prevBtn.addEventListener('click', e => {
   e.stopPropagation();
   showPrev();
 });
+
+
+const player = document.getElementById('player');
+let started = false;
+
+// 최초 터치 시 자동 재생
+document.addEventListener('touchstart', () => {
+  if (!started) {
+    player.play();
+    started = true;
+  }
+}, { once: true });
+
+// PC 클릭 대응
+document.addEventListener('click', () => {
+  if (!started) {
+    player.play();
+    started = true;
+  }
+}, { once: true });
+const btn = document.querySelector('.music-btn');
+let playing = false;
+
+btn.addEventListener('click', () => {
+  if (playing) {
+    player.pause();
+  } else {
+    player.play();
+  }
+  playing = !playing;
+});
