@@ -25,20 +25,31 @@ thumbs.forEach((thumb, index) => {
 
 /* ===== 메인 사진 클릭 → 모달 열기 ===== */
 mainPhoto.addEventListener('click', () => {
-  modalImg.src = mainPhoto.src;
-  modal.classList.add('show');
+  openModal(mainPhoto.src, currentIndex);
 });
 
+function openModal(src, index) {
+  currentIndex = index;
+  modalImg.src = src;
+  modal.classList.add('show');
+  document.body.classList.add('modal-open');
+}
+
+
 /* ===== 닫기 ===== */
-closeBtn.addEventListener('click', () => {
+function closeModal() {
   modal.classList.remove('show');
-});
+  document.body.classList.remove('modal-open');
+}
+
+closeBtn.addEventListener('click', closeModal);
 
 modal.addEventListener('click', e => {
   if (e.target === modal) {
-    modal.classList.remove('show');
+    closeModal();
   }
 });
+
 
 /* ===== 좌우 버튼 ===== */
 function showNext() {

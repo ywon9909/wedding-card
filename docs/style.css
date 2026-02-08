@@ -528,7 +528,13 @@ blockquote {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+body.modal-open {
+  overflow: hidden;
+  touch-action: none;
+}
+.modal {
+  overscroll-behavior: contain;
+}
 
 .close-btn {
   position: absolute;
